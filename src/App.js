@@ -6,16 +6,16 @@ import Issue from "./components/issue";
 import Repo from "./components/repo";
 
 function App() {
-  return (
-      <>
-        <Router>
-        <Header/>
-            <Route exact path='/' component={Home}/>
-            <Route path='/repo/:accountName/:repoName' component={Repo}/>
-            <Route path='/issue/:accountName/:repoName/:issueID' component={Issue}/>
-        </Router>
-      </>
-  );
+    return (
+        <>
+            <Router>
+                <Header/>
+                <Route exact path='/' component={Home}/>
+                <Route path='/repo/:accountName/:repoName' component={Repo}/>
+                <Route path='/issue/:accountName/:repoName/:issueID' component={Issue}/>
+            </Router>
+        </>
+    );
 }
 
 export default App;

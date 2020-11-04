@@ -45,9 +45,12 @@ function Issue() {
                             </div>
                             <div className="d-flex flex-column align-self-center p-2">
                                 <p className="text-justify">Created By: {issueCard.createdBy}</p>
-                                <p className="text-justify">Created On: {moment(issueCard.createdOn).format('MM-DD-YYYY')}</p>
-                                <p className="text-justify">Updated On: {moment(issueCard.updatedOn).format('MM-DD-YYYY')}</p>
-                                <p className="text-justify">Created On: {moment(issueCard.createdOn).format('MM-DD-YYYY')}</p>
+                                <p className="text-justify">Created
+                                    On: {moment(issueCard.createdOn).format('MM-DD-YYYY')}</p>
+                                <p className="text-justify">Updated
+                                    On: {moment(issueCard.updatedOn).format('MM-DD-YYYY')}</p>
+                                <p className="text-justify">Created
+                                    On: {moment(issueCard.createdOn).format('MM-DD-YYYY')}</p>
                             </div>
                         </div>
 

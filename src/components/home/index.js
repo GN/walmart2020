@@ -10,9 +10,6 @@ function Home() {
 
     return (
         <>
-
-
-
             <div className={'card small-cards m-5 d-flex rounded-0'}>
                 <div className={'card small-cards m-5 h-100 flex-grow-1 rounded-0 border-0'}>
                     <h1 className="pt-0 text-center">GitHub Tracker</h1>

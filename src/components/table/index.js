@@ -72,9 +72,10 @@ function Table({data}) {
                     //console.log(row.values.issueID);
                     return (
 
-                        <tr className="table-active" {...row.getRowProps()} onClick={() => handleClick(row.original.issueID)} style={{ cursor: cursor }}>
+                        <tr className="table-active" {...row.getRowProps()}
+                            onClick={() => handleClick(row.original.issueID)} style={{cursor: cursor}}>
                             {row.cells.map(cell => {
-                                if(cell.column.id === 'state'){
+                                if (cell.column.id === 'state') {
                                     return <td {...cell.getCellProps()}>{cell.value === 'closed' ?
                                         <span className="badge badge-pill badge-danger">Closed</span> :
                                         <span className="badge badge-pill badge-success">Open</span>
