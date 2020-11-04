@@ -10,24 +10,29 @@ function Home() {
 
     return (
         <>
-            <div className="jumbotron p-4">
-                <h1 className="pt-0 text-center">GitHub Tracker</h1>
-                <hr className="my-4"/>
-                <form onSubmit={e => e.preventDefault()}>
-                    <div className="form-group">
-                        <label className="control-label">Repo URL</label>
+
+
+
+            <div className={'card small-cards m-5 d-flex rounded-0'}>
+                <div className={'card small-cards m-5 h-100 flex-grow-1 rounded-0 border-0'}>
+                    <h1 className="pt-0 text-center">GitHub Tracker</h1>
+                    <form onSubmit={e => e.preventDefault()}>
                         <div className="form-group">
-                            <div className="input-group mb-3">
-                                <input type="text" value={repoURL}
-                                       placeholder={'https://github.com/walmartlabs/thorax/'}
-                                       onChange={e => setRepoURL(e.target.value)} className="form-control"/>
+                            <label className="control-label">Repo URL</label>
+                            <div className="form-group">
+                                <div className="input-group mb-3">
+                                    <input type="text" value={repoURL}
+                                           placeholder={'https://github.com/walmartlabs/thorax/'}
+                                           onChange={e => setRepoURL(e.target.value)} className="form-control"/>
+                                </div>
+                                <button type="submit"
+                                        onClick={handleSubmit}
+                                        className="btn btn-outline-info btn-lg btn-block">Search
+                                </button>
                             </div>
-                            <button type="submit"
-                                    onClick={handleSubmit} className="btn btn-outline-info btn-lg btn-block">Search
-                            </button>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </>
     );

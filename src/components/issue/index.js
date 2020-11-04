@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import moment from 'moment';
 import {useParams} from "react-router-dom";
 
 function Issue() {
-    // https://api.github.com/repos/walmartlabs/thorax/issues/419
     const {accountName, repoName, issueID} = useParams();
     const [issueCard, setIssueCard] = useState({});
     useEffect(() => {
@@ -20,12 +20,13 @@ function Issue() {
                     creatorURL: response.data.user.html_url
                 };
                 setIssueCard(cardHold);
+                console.log(cardHold);
             })
             .catch(function (error) {
                 console.log(error);
             });
-    }, [accountName, repoName, issueID, issueCard, setIssueCard]);
-git
+    }, []);
+
 
     return (
         <>
@@ -42,11 +43,24 @@ git
                                     </a>
                                 </div>
                             </div>
-                            <div className="d-flex flex-column p-2">
+                            <div className="d-flex flex-column align-self-center p-2">
                                 <p className="text-justify">Created By: {issueCard.createdBy}</p>
-                                <p className="text-justify">Created On: {issueCard.createdOn}</p>
-                                <p className="text-justify">Updated On: {issueCard.updatedOn}</p>
-                                <p className="text-justify">Created On: {issueCard.createdOn}</p>
+                                <p className="text-justify">Created On: {moment(issueCard.createdOn).format('MM-DD-YYYY')}</p>
+                                <p className="text-justify">Updated On: {moment(issueCard.updatedOn).format('MM-DD-YYYY')}</p>
+                                <p className="text-justify">Created On: {moment(issueCard.createdOn).format('MM-DD-YYYY')}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className="d-flex m-0 p-0 justify-content-around">
+                        <div className="d-flex flex-row">
+                            <div className="d-flex flex-column p-2">
+                                <div className="card small-cards m-5 h-100 flex-grow-1 rounded-0">
+                                    <div className="card-header">Description</div>
+                                    <div className="card-body">
+                                        <p className="card-text">{issueCard.body}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
